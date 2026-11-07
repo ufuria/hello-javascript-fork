@@ -137,6 +137,23 @@ const conexion3 = new ConexionDataBase("db2")
 console.log(conexion3.name)
 console.log(conexion2 === conexion3)
 
-
-
 // 10. Desarrolla un Proxy
+
+const handler = {
+  deleteProperty(target, prop) {
+    if(prop === "name" || prop === "user" || prop === "password"){
+     throw new Error (`No puedes borrar la propiedad ${prop}`)
+    }
+    delete target[prop]
+    return true
+  }
+}
+
+const conexionProxy = new Proxy(new ConexionDataBase("ubb","u2","asd2","100.000.0.0", 1655), handler)
+
+try {
+  delete conexionProxy.user
+} catch (e) {
+  console.log(e.message)
+}
+
