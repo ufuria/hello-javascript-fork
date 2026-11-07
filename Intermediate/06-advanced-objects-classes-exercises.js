@@ -37,7 +37,16 @@ console.log(p2.profesion)
 console.log(p2)
 
 // 3. Define un método de instancia en un objeto
+//console.log(p2 instanceof persona2) no funciona ya que instanceof
+//solo funciona con funciones constructoras o clases a su derecha
 
+class Auto{
+  constructor(nombre){
+    this.nombre = nombre
+  }
+}
+let a1 = new Auto("Mercedes")
+console.log("A1 es una instancia de Auto?", a1 instanceof Auto)
 // 4. Haz uso de get y set en un objeto
 
 // 5. Utiliza la operación assign en un objeto
