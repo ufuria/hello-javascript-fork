@@ -112,4 +112,31 @@ Object.assign(Auto.prototype, sonido)
 primerAutoAcuatico.sonidoMotor()
 // 9. Crea un Singleton
 
+class ConexionDataBase {
+
+    constructor(dbname,user,password,host,port) {
+        if (ConexionDataBase.instance) {
+            return ConexionDataBase.instance
+        }
+        this.name = dbname
+        this.user = user
+        this.password = password
+        this.host = host
+        this.port = port
+        ConexionDataBase.instance = this
+    }
+}
+
+const conexion1 = new ConexionDataBase("ubb","u1","asd","000.000.0.0", 1655)
+const conexion2 = new ConexionDataBase()
+console.log(conexion1.user)
+console.log(conexion2.user)
+console.log(conexion1 === conexion2)
+
+const conexion3 = new ConexionDataBase("db2")
+console.log(conexion3.name)
+console.log(conexion2 === conexion3)
+
+
+
 // 10. Desarrolla un Proxy
