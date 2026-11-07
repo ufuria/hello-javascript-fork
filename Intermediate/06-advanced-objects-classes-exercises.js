@@ -4,20 +4,37 @@ Vídeo: https://youtu.be/iJvLAZ8MJ2E?t=11832
 */
 
 // 1. Agregega una función al prototipo de un objeto
-function persona (nombre) {
+function persona1 (nombre) {
   this.nombre = nombre
 }
-persona.prototype.saludar = function () {
+persona1.prototype.saludar = function () {
   console.log(`hola!, de parte del objeto: ${this.nombre}`)
 }
-persona.prototype.saludar2 = function () {
+persona1.prototype.saludar2 = function () {
   console.log(`Hola!!, provengo de: ${this.constructor.name}`)
 }
-const pedro = new persona("Pedro")
+const pedro = new persona1("Pedro")
 pedro.saludar()
 pedro.saludar2()
 
 // 2. Crea un objeto que herede de otro
+//SOLUCION:
+
+let persona2 = {
+  nombre : "",
+  age: 0
+}
+persona2.hola = function (){
+  console.log(`me llamo ${this.nombre}`)
+}
+//polimorfismo
+let p2 = Object.create(persona2)
+p2.nombre = "Sebastian"
+p2.hola()
+//herencia
+p2.profesion = "programador"
+console.log(p2.profesion)
+console.log(p2)
 
 // 3. Define un método de instancia en un objeto
 
