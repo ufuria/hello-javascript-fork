@@ -65,7 +65,16 @@ console.log(ap1.getNombre())
 ap1.setNombre("ENCHULAME LA CORKINAVE")
 console.log(ap1.getNombre())
 // 5. Utiliza la operación assign en un objeto
-
+let datosComputador = {
+  placaMadre : ""
+}
+let trabajador = {
+  nombre : ""
+}
+let trabajadorAll = Object.assign(trabajador, datosComputador)
+trabajadorAll.nombre = "Santiago"
+trabajadorAll.placaMadre = "Asus B320"
+console.log(trabajadorAll)
 // 6. Crea una clase abstracta
 
 // 7. Utiliza polimorfismo en dos clases diferentes
