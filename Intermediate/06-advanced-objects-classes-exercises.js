@@ -103,7 +103,13 @@ let primerAutoAereo = new AutoAereo("Jumbo")
 primerAutoAereo.transporte()
 primerAutoAcuatico.transporte()
 // 8. Implementa un Mixin
-
+const sonido = {
+  sonidoMotor(){
+    console.log(`El auto ${this.nombre} hace sstuutsutu`)
+  }
+}
+Object.assign(Auto.prototype, sonido)
+primerAutoAcuatico.sonidoMotor()
 // 9. Crea un Singleton
 
 // 10. Desarrolla un Proxy
