@@ -76,6 +76,14 @@ trabajadorAll.nombre = "Santiago"
 trabajadorAll.placaMadre = "Asus B320"
 console.log(trabajadorAll)
 // 6. Crea una clase abstracta
+// Resuelto en el ej 3
+
+/*class Auto{
+  constructor(nombre){
+    this.nombre = nombre
+  }
+}
+*/
 
 // 7. Utiliza polimorfismo en dos clases diferentes
 
