@@ -87,6 +87,21 @@ console.log(trabajadorAll)
 
 // 7. Utiliza polimorfismo en dos clases diferentes
 
+class AutoAcuatico extends Auto{
+  transporte(){
+    console.log("viajo por el agua")
+  }
+}
+class AutoAereo extends Auto{
+  transporte(){
+    console.log("viajo por el aire")
+  }
+}
+
+let primerAutoAcuatico = new AutoAcuatico("Moby Dick")
+let primerAutoAereo = new AutoAereo("Jumbo")
+primerAutoAereo.transporte()
+primerAutoAcuatico.transporte()
 // 8. Implementa un Mixin
 
 // 9. Crea un Singleton
