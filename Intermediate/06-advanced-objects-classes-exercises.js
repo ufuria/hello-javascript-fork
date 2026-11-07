@@ -48,7 +48,22 @@ class Auto{
 let a1 = new Auto("Mercedes")
 console.log("A1 es una instancia de Auto?", a1 instanceof Auto)
 // 4. Haz uso de get y set en un objeto
-
+class AutoPrivado{
+  #nombre
+  constructor(nombre){
+    this.#nombre = nombre
+  }
+  getNombre(){
+  return this.#nombre
+  }
+  setNombre(nuevoNombre){
+  this.#nombre = nuevoNombre
+  }
+}
+let ap1 = new AutoPrivado("Enchulame la corkinave")
+console.log(ap1.getNombre())
+ap1.setNombre("ENCHULAME LA CORKINAVE")
+console.log(ap1.getNombre())
 // 5. Utiliza la operación assign en un objeto
 
 // 6. Crea una clase abstracta
