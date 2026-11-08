@@ -22,6 +22,39 @@ saludarv2("pedro",imprimir)
 // 2. Crea tres funciones task1(callback), task2(callback) y task3(callback). 
 //    Cada función debe tardar 1 segundo en ejecutarse y luego llamar al callback.
 
+  //me imagino que quiere que nos demos cuenta del callbackHell
+
+function finishJob (){
+  console.log("trabajo terminado")
+}
+
+function task1(callback){
+  setTimeout(()=>{
+    console.log("tarea 1 procesada")
+    callback()
+  },1000)
+}
+
+function task2(callback){
+  setTimeout(()=>{
+    console.log("tarea 2 procesada")
+    callback()
+  },1000)
+}
+
+function task3(callback){
+  setTimeout(()=>{
+    console.log("tarea 3 procesada")
+    callback()
+  },1000)
+}
+
+task1(()=>{
+  task2(()=>{
+    task3(finishJob)
+  })
+})
+//programar de esta forma hace que quede codigo que se vea muy mal
 // 3. Crea una función para verificar un número que retorne una Promesa. 
 //    Si el número es par, la promesa se resuelve con el mensaje "Número par". 
 //    Si el número es impar, la promesa se rechaza con el mensaje "Número impar".
