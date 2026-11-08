@@ -55,9 +55,21 @@ task1(()=>{
   })
 })
 //programar de esta forma hace que quede codigo que se vea muy mal
+
+
 // 3. Crea una función para verificar un número que retorne una Promesa. 
 //    Si el número es par, la promesa se resuelve con el mensaje "Número par". 
 //    Si el número es impar, la promesa se rechaza con el mensaje "Número impar".
+
+function isPar(numero) {
+  return new Promise((resolve, reject) =>{
+    numero % 2 == 0 ? resolve("Numero par") : reject("numero impar")
+  })
+}
+const numero = isPar(3)
+numero
+  .then(result => {console.log(result)})
+  .catch((e)=>{console.log(e)})
 
 // 4. Crea tres funciones que devuelvan promesas:
 //    firstTask(): tarda 1s y muestra "Primera tarea completada".
