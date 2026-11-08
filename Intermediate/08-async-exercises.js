@@ -6,6 +6,19 @@ Vídeo: https://youtu.be/iJvLAZ8MJ2E?t=14558
 // 1. Crea una función para saludar que reciba un nombre y un callback. 
 //    El callback debe ejecutarse después de 2 segundos y mostrar en consola "Hola, [nombre]".
 
+function imprimir(nombre){
+  console.log(`Hola, ${nombre}`)
+}
+  function saludar(nombre, callbackfn){
+    setTimeout(callbackfn,2000,nombre) //con setTimeout los parametros de la funcion se pasan despues
+  }
+  function saludarv2(nombre, callbackfn){
+    setTimeout(()=>callbackfn(nombre), 2000)
+    /*Lo que pasa aca es que declaramos una funcion, la arrow function, setTimeout la agarra, PRIMERO ESPERA 2 SEGUNDOS y luego ejecuta la funcion y en este caso la arrow function solamente llama a la callbackfn      
+    }*/
+  }
+saludar("juan",imprimir)
+saludarv2("pedro",imprimir)
 // 2. Crea tres funciones task1(callback), task2(callback) y task3(callback). 
 //    Cada función debe tardar 1 segundo en ejecutarse y luego llamar al callback.
 
