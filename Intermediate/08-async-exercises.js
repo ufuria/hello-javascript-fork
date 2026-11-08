@@ -75,9 +75,66 @@ numero
 //    firstTask(): tarda 1s y muestra "Primera tarea completada".
 //    secondTask(): tarda 2s y muestra "Segunda tarea completada".
 //    thirdTask(): tarda 1.5s y muestra "Tercera tarea completada".
+function firstTask(){
+  return new Promise((resolve, reject) =>{
+    setTimeout(()=>{
+      try {
+       console.log("Primera tarea completada")
+        resolve()
+      } catch (error) {
+        reject(error)
+      }
+    },1000)
+  })
+}
+//const t1 = firstTask()
+//t1.then(result => {console.log(result)})
 
+function secondTask(){
+  return new Promise((resolve, reject) =>{
+    setTimeout(()=>{
+      try {
+       console.log("Segunda tarea completada")
+        resolve()
+      } catch (error) {
+        reject(error)
+      }
+    },2000)
+  })
+}
+
+function thirdTask(){
+  return new Promise((resolve, reject) =>{
+    setTimeout(()=>{
+      try {
+       console.log("Tercera tarea completada")
+        resolve()
+      } catch (error) {
+        reject(error)
+      }
+    },1500)
+  })
+}
+firstTask()
+  .then(secondTask)
+  .then(thirdTask)
+  .then(()=>{
+    console.log("TERMINO!!")
+  })
+
+  //function secondTask()
 // 5. Transforma el ejercicio anterior de Promesas en una función async/await llamada executeTasks().
 
+  /**
+  *
+  * executeTasks es una función async que usa await para esperar que cada promesa se resuelva antes de pasar a la siguiente, ejecutando las tareas en secuencia igual que una cadena de .then, pero escrito como código lineal.
+  */
+  async function executeTasks(){
+  await firstTask() // inicia firstTask y pausa la funcion hasta que se resuelva (1s)
+  await secondTask()// recien ahi inicia secondTask y vuelve a pausar (2s)
+  await thirdTask() // recien ahi inicia thirdTask y vuelve a pausar (1.5s)
+}
+executeTasks()
 // 6. Crea una función getUser(id) que devuelva una promesa y simule una llamada a una API (que se demore 2s).
 //    Si el id es menor a 5, la promesa se resuelve con { id, nombre: "Usuario " + id }.
 //    Si el id es 5 o mayor, la promesa se rechaza con el mensaje "Usuario no encontrado".
